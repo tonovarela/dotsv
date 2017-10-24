@@ -1,4 +1,4 @@
-//Este es un cambio en la logica
+//Se agrego funcionalidad en Angular
 var app = angular.module('App', []);
 app.constant('SERVERS', {
     DEVELOPMENT: "http://localhost:8000/",
