@@ -23,3 +23,4 @@ use Illuminate\Http\Request;
 
 
 Route::post("v1/login",'LoginController@listar');
+Route::get("v1/orden",'OrdenController@index');
