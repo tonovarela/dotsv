@@ -9,6 +9,7 @@ use Redirect;
 use Session;
 use Validator;
 use PDF;
+use App;
 
 class LoginController extends Controller
 {
@@ -51,14 +52,19 @@ class LoginController extends Controller
         return $request->data;
     }
 
-    public function test()
+    public function test(Request $request)
     {
-        $pdf = PDF::loadView('pdf.invoice');        
-                return $pdf->download('invoice.pdf');
+        // $pdf = App::make('dompdf.wrapper');
+        // $pdf->loadHTML('<h1>Test</h1>');
+        // return $pdf->stream();
 
-        // return View('pdf.invoice');
+
+        $data=array("texto"=>$request->texto);
+        $pdf = PDF::loadView('salida', $data);
+         return $pdf->stream();
+        //return $pdf->download('invoice.pdf');
+
+
     }
-    public function getData()
-    {
-    }
+  
 }

@@ -17,7 +17,7 @@ Route::get("/", function () {
 });
 
 
-Route::get("test","LoginController@test");
+Route::get("test/{texto}","LoginController@test");
 
 Route::group(["prefix"=>'acceso'], function () {
     Route::get('login', "LoginController@index");
